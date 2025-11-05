@@ -1,6 +1,8 @@
 # WIP - Steering Behaviors for Autonomous Characters (Unity)
 
-![Current state](Doc/demo.gif)
+<p align="center">
+  <img src="Doc/demo.gif" alt="Current state" width="512">
+</p>
 
 This project is an implementation of **Steering Behaviors for Autonomous Characters** originally developed by [Craig W. Reynolds](https://www.red3d.com/cwr/steer/gdc99/).
 It is based on the Unity adaptation by [Edirlei Soares de Lima](https://edirlei.com/aulas/game-ai-2020/GAME_AI_Lecture_07_Steering_Behaviours_2020.html), with additional modifications and improvements made by me.
