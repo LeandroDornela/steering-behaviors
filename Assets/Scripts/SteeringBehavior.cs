@@ -68,7 +68,7 @@ public class SteeringBehavior : MonoBehaviour
         //_avoidTarget = averageTargetsPosition;
 
         // WANDER
-        _lastWanderDirection = Vector3.Lerp(_lastWanderDirection, randomSphereDirection, 1 * Time.fixedDeltaTime);
+        _lastWanderDirection = Vector3.Slerp(_lastWanderDirection, randomSphereDirection, 1 * Time.fixedDeltaTime);
         Vector3 wanderPosition = transform.position + _lastWanderDirection + transform.forward * 3;
 
         // Stop evading close to evade position. Do this before obstacle check to avoid ignoring evading position.
@@ -130,7 +130,7 @@ public class SteeringBehavior : MonoBehaviour
         //_steeringForce = _steeringForce * _maxSteeringForce;
 
         // Play the steering force.
-        _steeringForce = Vector3.Lerp(_lastSteeringForce, _steeringForce, 5 * Time.fixedDeltaTime);
+        _steeringForce = Vector3.Slerp(_lastSteeringForce, _steeringForce, 5 * Time.fixedDeltaTime);
         _rigidbody.AddForce(_steeringForce, ForceMode.Force);
 
         // Correct min speed.
