@@ -11,7 +11,7 @@ namespace SteeringBehaviours
 
         public SBArrival() : base(){}
 
-        void OnValidate()
+        public override void OnValidate()
         {
             if (_minDistanceRadius > _slowRadius)
             {
@@ -25,35 +25,33 @@ namespace SteeringBehaviours
             float speed;
             if (context.TargetDistance > _slowRadius)
             {
-                speed = context.MaxSpeed;
+                speed = context.AgentMaxSpeed;
             }
             else // If inside slow radius, linearly decelerate.
             {
-                speed = context.MaxSpeed * ((context.TargetDistance - _minDistanceRadius) / _slowRadius);
+                speed = context.AgentMaxSpeed * (Mathf.Max(0, context.TargetDistance - _minDistanceRadius) / _slowRadius);
             }
 
-            //desiredVelocity = speed * context.TargetDirection
-            Vector3 force = speed * context.TargetDirection - context.LinearVelocity;
+            //Vector3 force = Vector3.ClampMagnitude(speed * context.TargetDirection - context.LinearVelocity, context.MaxForce);
+            Vector3 force = speed * context.TargetDirection - context.AgentLinearVelocity;
 
             // Cache current steering force.
             _cachedSteeringForce = force;
 
             // Debug
-            DrawRay(context.Position, force);
+            Debug.DrawRay(context.AgentPosition, force, _color);
 
             return force;
         }
 
 
-#if UNITY_EDITOR
-        void OnDrawGizmosSelected()
+        public override void OnDrawGizmosSelected(Transform transform)
         {
             if (!_enabled) return;
 
-            Gizmos.color = _color;
-            Gizmos.DrawWireSphere(transform.position, _minDistanceRadius);
-            Gizmos.DrawWireSphere(transform.position, _slowRadius);
+            Gizmos.color = new Color(_color.r, _color.g, _color.b, _color.a/3f);
+            Gizmos.DrawSphere(transform.position, _minDistanceRadius);
+            Gizmos.DrawSphere(transform.position, _slowRadius);
         }
-#endif
     }
 }

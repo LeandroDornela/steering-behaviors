@@ -127,6 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ChangeColorOnCollision
   detectionTag: Player
   color: {r: 1, g: 0, b: 0, a: 1}
+  resetTime: 3
 --- !u!54 &3974866501411988261
 Rigidbody:
   m_ObjectHideFlags: 0

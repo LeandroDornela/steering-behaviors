@@ -40,24 +40,22 @@ namespace SteeringBehaviours
                 _sphereDirection = Vector3.Slerp(_sphereDirection, _targetSphereDirection, _interpolationSpeed * Time.fixedDeltaTime);
             }
 
-            Vector3 wanderDirection = context.Forward * _distance + _sphereDirection;
-            Vector3 force = wanderDirection - context.LinearVelocity;
+            Vector3 wanderDirection = context.AgentLinearVelocity.normalized * _distance + _sphereDirection;
+            //Vector3 force = Vector3.ClampMagnitude(wanderDirection - context.LinearVelocity, context.MaxForce);
+            Vector3 force = wanderDirection - context.AgentLinearVelocity;
 
-            DrawRay(context.Position, wanderDirection);
-            //DrawRay(context.Position, force);
+            Debug.DrawRay(context.AgentPosition, wanderDirection, _color);
 
             return force;
         }
 
 
-        #if UNITY_EDITOR
-        void OnDrawGizmosSelected()
+        public override void OnDrawGizmosSelected(Transform transform)
         {
             if (!_enabled) return;
 
             Gizmos.color = _color*0.7f;
             Gizmos.DrawWireSphere(transform.position + transform.forward * _distance, _radius);
         }
-#endif
     }
 }

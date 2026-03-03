@@ -20,16 +20,13 @@ The following behaviors are currently implemented:
 * **Arrive**
 * **Wander**
 * **Obstacle Avoidance**
+* **Wall Following**
 
 ## To-Do
 
 * [ ] Path Following
-* [ ] Wall Following
-* [ ] Collision Avoidance
-* [ ] Separation, Cohesion, Alignment (Group Behaviors)
-* [ ] Refactor monolithic code structure
-* [ ] Separate behaviors, agent perception, and movement logic
-* [ ] Create a more user-friendly Unity Inspector interface
+* [ ] Collision Avoidance (optional - out of scope)
+* [ ] Separation, Cohesion, Alignment (Group Behaviors, optional - out of scope)
 
 ## References
 
