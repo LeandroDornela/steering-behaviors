@@ -18,6 +18,13 @@ namespace SteeringBehaviours
             targetPosition = GetAverageTargetPosition();
             return true;
         }
+
+
+        public void SetTargets(Transform[] targets)
+        {
+            _targets = targets;
+        }
+
         
 
         Vector3 GetAverageTargetPosition()

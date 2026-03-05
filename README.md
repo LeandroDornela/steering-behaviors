@@ -1,7 +1,10 @@
 # WIP - Steering Behaviors for Autonomous Characters (Unity)
 
 <p align="center">
-  <img src="Doc/demo.gif" alt="Current state" width="512">
+  <img src="Doc/demo.gif" alt="" width="512">
+</p>
+<p align="center">
+  <img src="Doc/demo_1.gif" alt="" width="512">
 </p>
 
 This project is an implementation of **Steering Behaviors for Autonomous Characters** originally developed by [Craig W. Reynolds](https://www.red3d.com/cwr/steer/gdc99/).
@@ -22,11 +25,12 @@ The following behaviors are currently implemented:
 * **Obstacle Avoidance**
 * **Wall Following**
 
-## To-Do
+## To-Dos (including optionals)
 
 * [ ] Path Following
 * [ ] Collision Avoidance (optional - out of scope)
 * [ ] Separation, Cohesion, Alignment (Group Behaviors, optional - out of scope)
+* [ ] Optimization to a large number of agents (optional - out of scope)
 
 ## References
 

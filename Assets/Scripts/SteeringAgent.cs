@@ -9,7 +9,13 @@ namespace SteeringBehaviours
         [SerializeField] private SteeringActuator _steeringActuator;
 
 
-        void FixedUpdate()
+        public void CustomUpdate()
+        {
+            UpdateAgent();
+        }
+
+
+        void UpdateAgent()
         {
             _steeringPerception.TryGetTargetPosition(out Vector3 targetPosition);
 
