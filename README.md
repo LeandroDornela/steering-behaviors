@@ -4,7 +4,7 @@
   <img src="Doc/demo.gif" alt="" width="512">
 </p>
 <p align="center">
-  <img src="Doc/demo_1.gif" alt="" width="512">
+  <img src="Doc/demo_2.gif" alt="" width="512">
 </p>
 
 This project is an implementation of **Steering Behaviors for Autonomous Characters** originally developed by [Craig W. Reynolds](https://www.red3d.com/cwr/steer/gdc99/).
